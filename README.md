@@ -17,4 +17,4 @@
 ### Acknowledgments
 * **Co-pilot:** Refined and coded with ### 致謝 (Special Thanks)
 * 本專案在 AI 協作夥伴 **Gemini** 的輔助下完成架構與代碼實現。the assistance of **Gemini**, an AI thought partner.
-* 
+ 
