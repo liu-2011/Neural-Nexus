@@ -32,3 +32,6 @@
 * **Founder**: 由 Liu-2011 於中學時期獨立構思與創立。
 
 ---
+
+## Performance Verification
+![Benchmark Chart](benchmark_chart.png)
