@@ -1,0 +1,380 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_00000218a9072870 .scope module, "tb_neural_simd" "tb_neural_simd" 2 2;
+ .timescale -9 -12;
+v00000218a90cd050_0 .var "clk", 0 0;
+v00000218a90cc8d0_0 .var "mask", 31 0;
+v00000218a90cc970_0 .net "rd", 31 0, L_00000218a90dffe0;  1 drivers
+v00000218a90cca10_0 .var "rs1", 31 0;
+v00000218a90cd410_0 .var "rs2", 31 0;
+v00000218a90cd550_0 .var "rst_n", 0 0;
+E_00000218a9074da0 .event posedge, v00000218a906e090_0;
+S_00000218a905d940 .scope module, "u_simd" "neural_simd" 2 10, 3 1 0, S_00000218a9072870;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "clk";
+    .port_info 1 /INPUT 1 "rst_n";
+    .port_info 2 /INPUT 32 "rs1";
+    .port_info 3 /INPUT 32 "rs2";
+    .port_info 4 /INPUT 32 "mask";
+    .port_info 5 /OUTPUT 32 "rd";
+v00000218a90cc5b0_0 .net "clk", 0 0, v00000218a90cd050_0;  1 drivers
+v00000218a90cd7d0_0 .net "mask", 31 0, v00000218a90cc8d0_0;  1 drivers
+v00000218a90cc0b0_0 .net "rd", 31 0, L_00000218a90dffe0;  alias, 1 drivers
+v00000218a90ccd30_0 .net "rs1", 31 0, v00000218a90cca10_0;  1 drivers
+v00000218a90cbed0_0 .net "rs2", 31 0, v00000218a90cd410_0;  1 drivers
+v00000218a90cd190_0 .net "rst_n", 0 0, v00000218a90cd550_0;  1 drivers
+L_00000218a90cd910 .part v00000218a90cca10_0, 0, 8;
+L_00000218a90cbf70 .part v00000218a90cd410_0, 0, 8;
+L_00000218a90cc510 .part v00000218a90cc8d0_0, 0, 8;
+L_00000218a90e0800 .part v00000218a90cca10_0, 8, 8;
+L_00000218a90dedc0 .part v00000218a90cd410_0, 8, 8;
+L_00000218a90e0620 .part v00000218a90cc8d0_0, 8, 8;
+L_00000218a90dfd60 .part v00000218a90cca10_0, 16, 8;
+L_00000218a90dfea0 .part v00000218a90cd410_0, 16, 8;
+L_00000218a90dfe00 .part v00000218a90cc8d0_0, 16, 8;
+L_00000218a90ded20 .part v00000218a90cca10_0, 24, 8;
+L_00000218a90dee60 .part v00000218a90cd410_0, 24, 8;
+L_00000218a90df900 .part v00000218a90cc8d0_0, 24, 8;
+L_00000218a90dffe0 .concat8 [ 8 8 8 8], v00000218a906e1d0_0, v00000218a90ca6e0_0, v00000218a90caf00_0, v00000218a90ccb50_0;
+S_00000218a905dad0 .scope module, "core0" "neural_core" 3 12, 4 1 0, S_00000218a905d940;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "clk";
+    .port_info 1 /INPUT 1 "rst_n";
+    .port_info 2 /INPUT 8 "pixel_t";
+    .port_info 3 /INPUT 8 "pixel_t1";
+    .port_info 4 /INPUT 8 "mask";
+    .port_info 5 /OUTPUT 8 "pixel_out";
+L_00000218a9450088 .functor BUFT 1, C4<11111111>, C4<0>, C4<0>, C4<0>;
+v00000218a906de10_0 .net/2u *"_ivl_0", 7 0, L_00000218a9450088;  1 drivers
+L_00000218a9450118 .functor BUFT 1, C4<00000000>, C4<0>, C4<0>, C4<0>;
+v00000218a906d5f0_0 .net *"_ivl_11", 7 0, L_00000218a9450118;  1 drivers
+v00000218a906c5b0_0 .net *"_ivl_14", 15 0, L_00000218a90ccdd0;  1 drivers
+L_00000218a9450160 .functor BUFT 1, C4<00000000>, C4<0>, C4<0>, C4<0>;
+v00000218a906d190_0 .net *"_ivl_17", 7 0, L_00000218a9450160;  1 drivers
+v00000218a906c6f0_0 .net *"_ivl_18", 15 0, L_00000218a90cce70;  1 drivers
+L_00000218a94501a8 .functor BUFT 1, C4<00000000>, C4<0>, C4<0>, C4<0>;
+v00000218a906dcd0_0 .net *"_ivl_21", 7 0, L_00000218a94501a8;  1 drivers
+L_00000218a94501f0 .functor BUFT 1, C4<0000000010000000>, C4<0>, C4<0>, C4<0>;
+v00000218a906deb0_0 .net/2u *"_ivl_26", 15 0, L_00000218a94501f0;  1 drivers
+v00000218a906ce70_0 .net *"_ivl_30", 15 0, L_00000218a90cd870;  1 drivers
+v00000218a906d230_0 .net *"_ivl_32", 7 0, L_00000218a90cd690;  1 drivers
+L_00000218a9450238 .functor BUFT 1, C4<00000000>, C4<0>, C4<0>, C4<0>;
+v00000218a906d730_0 .net *"_ivl_34", 7 0, L_00000218a9450238;  1 drivers
+v00000218a906d410_0 .net *"_ivl_4", 15 0, L_00000218a90cc1f0;  1 drivers
+L_00000218a94500d0 .functor BUFT 1, C4<00000000>, C4<0>, C4<0>, C4<0>;
+v00000218a906cab0_0 .net *"_ivl_7", 7 0, L_00000218a94500d0;  1 drivers
+v00000218a906df50_0 .net *"_ivl_8", 15 0, L_00000218a90cbe30;  1 drivers
+v00000218a906e090_0 .net "clk", 0 0, v00000218a90cd050_0;  alias, 1 drivers
+v00000218a906e310_0 .net "inv_mask", 7 0, L_00000218a90cd370;  1 drivers
+v00000218a906cb50_0 .net "mask", 7 0, L_00000218a90cc510;  1 drivers
+v00000218a906e1d0_0 .var "pixel_out", 7 0;
+v00000218a906d7d0_0 .net "pixel_t", 7 0, L_00000218a90cd910;  1 drivers
+v00000218a906dff0_0 .net "pixel_t1", 7 0, L_00000218a90cbf70;  1 drivers
+v00000218a906d690_0 .net "rst_n", 0 0, v00000218a90cd550_0;  alias, 1 drivers
+v00000218a906cbf0_0 .net "sum", 15 0, L_00000218a90cd5f0;  1 drivers
+v00000218a906ca10_0 .net "sum_adjusted", 15 0, L_00000218a90cc330;  1 drivers
+v00000218a906e130_0 .net "sum_rounded", 15 0, L_00000218a90cc290;  1 drivers
+v00000218a906e270_0 .net "term_a", 15 0, L_00000218a90cd0f0;  1 drivers
+v00000218a906d870_0 .net "term_b", 15 0, L_00000218a90cd4b0;  1 drivers
+E_00000218a9075860/0 .event negedge, v00000218a906d690_0;
+E_00000218a9075860/1 .event posedge, v00000218a906e090_0;
+E_00000218a9075860 .event/or E_00000218a9075860/0, E_00000218a9075860/1;
+L_00000218a90cd370 .arith/sub 8, L_00000218a9450088, L_00000218a90cc510;
+L_00000218a90cc1f0 .concat [ 8 8 0 0], L_00000218a90cd910, L_00000218a94500d0;
+L_00000218a90cbe30 .concat [ 8 8 0 0], L_00000218a90cc510, L_00000218a9450118;
+L_00000218a90cd0f0 .arith/mult 16, L_00000218a90cc1f0, L_00000218a90cbe30;
+L_00000218a90ccdd0 .concat [ 8 8 0 0], L_00000218a90cbf70, L_00000218a9450160;
+L_00000218a90cce70 .concat [ 8 8 0 0], L_00000218a90cd370, L_00000218a94501a8;
+L_00000218a90cd4b0 .arith/mult 16, L_00000218a90ccdd0, L_00000218a90cce70;
+L_00000218a90cd5f0 .arith/sum 16, L_00000218a90cd0f0, L_00000218a90cd4b0;
+L_00000218a90cc290 .arith/sum 16, L_00000218a90cd5f0, L_00000218a94501f0;
+L_00000218a90cd690 .part L_00000218a90cc290, 8, 8;
+L_00000218a90cd870 .concat [ 8 8 0 0], L_00000218a90cd690, L_00000218a9450238;
+L_00000218a90cc330 .arith/sum 16, L_00000218a90cc290, L_00000218a90cd870;
+S_00000218a9072c50 .scope module, "core1" "neural_core" 3 18, 4 1 0, S_00000218a905d940;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "clk";
+    .port_info 1 /INPUT 1 "rst_n";
+    .port_info 2 /INPUT 8 "pixel_t";
+    .port_info 3 /INPUT 8 "pixel_t1";
+    .port_info 4 /INPUT 8 "mask";
+    .port_info 5 /OUTPUT 8 "pixel_out";
+L_00000218a9450280 .functor BUFT 1, C4<11111111>, C4<0>, C4<0>, C4<0>;
+v00000218a906c470_0 .net/2u *"_ivl_0", 7 0, L_00000218a9450280;  1 drivers
+L_00000218a9450310 .functor BUFT 1, C4<00000000>, C4<0>, C4<0>, C4<0>;
+v00000218a906cc90_0 .net *"_ivl_11", 7 0, L_00000218a9450310;  1 drivers
+v00000218a906d910_0 .net *"_ivl_14", 15 0, L_00000218a90cc650;  1 drivers
+L_00000218a9450358 .functor BUFT 1, C4<00000000>, C4<0>, C4<0>, C4<0>;
+v00000218a906c510_0 .net *"_ivl_17", 7 0, L_00000218a9450358;  1 drivers
+v00000218a906c790_0 .net *"_ivl_18", 15 0, L_00000218a90cc6f0;  1 drivers
+L_00000218a94503a0 .functor BUFT 1, C4<00000000>, C4<0>, C4<0>, C4<0>;
+v00000218a906c830_0 .net *"_ivl_21", 7 0, L_00000218a94503a0;  1 drivers
+L_00000218a94503e8 .functor BUFT 1, C4<0000000010000000>, C4<0>, C4<0>, C4<0>;
+v00000218a906cd30_0 .net/2u *"_ivl_26", 15 0, L_00000218a94503e8;  1 drivers
+v00000218a906cdd0_0 .net *"_ivl_30", 15 0, L_00000218a90e0580;  1 drivers
+v00000218a9050720_0 .net *"_ivl_32", 7 0, L_00000218a90dfcc0;  1 drivers
+L_00000218a9450430 .functor BUFT 1, C4<00000000>, C4<0>, C4<0>, C4<0>;
+v00000218a904faa0_0 .net *"_ivl_34", 7 0, L_00000218a9450430;  1 drivers
+v00000218a90507c0_0 .net *"_ivl_4", 15 0, L_00000218a90cc3d0;  1 drivers
+L_00000218a94502c8 .functor BUFT 1, C4<00000000>, C4<0>, C4<0>, C4<0>;
+v00000218a90ca820_0 .net *"_ivl_7", 7 0, L_00000218a94502c8;  1 drivers
+v00000218a90caaa0_0 .net *"_ivl_8", 15 0, L_00000218a90cc470;  1 drivers
+v00000218a90caa00_0 .net "clk", 0 0, v00000218a90cd050_0;  alias, 1 drivers
+v00000218a90cab40_0 .net "inv_mask", 7 0, L_00000218a90cd9b0;  1 drivers
+v00000218a90c9c40_0 .net "mask", 7 0, L_00000218a90e0620;  1 drivers
+v00000218a90ca6e0_0 .var "pixel_out", 7 0;
+v00000218a90cae60_0 .net "pixel_t", 7 0, L_00000218a90e0800;  1 drivers
+v00000218a90cb220_0 .net "pixel_t1", 7 0, L_00000218a90dedc0;  1 drivers
+v00000218a90cb4a0_0 .net "rst_n", 0 0, v00000218a90cd550_0;  alias, 1 drivers
+v00000218a90c9e20_0 .net "sum", 15 0, L_00000218a90cc830;  1 drivers
+v00000218a90c9ce0_0 .net "sum_adjusted", 15 0, L_00000218a90e0760;  1 drivers
+v00000218a90cb2c0_0 .net "sum_rounded", 15 0, L_00000218a90cbc50;  1 drivers
+v00000218a90cafa0_0 .net "term_a", 15 0, L_00000218a90cbbb0;  1 drivers
+v00000218a90cb180_0 .net "term_b", 15 0, L_00000218a90cc790;  1 drivers
+L_00000218a90cd9b0 .arith/sub 8, L_00000218a9450280, L_00000218a90e0620;
+L_00000218a90cc3d0 .concat [ 8 8 0 0], L_00000218a90e0800, L_00000218a94502c8;
+L_00000218a90cc470 .concat [ 8 8 0 0], L_00000218a90e0620, L_00000218a9450310;
+L_00000218a90cbbb0 .arith/mult 16, L_00000218a90cc3d0, L_00000218a90cc470;
+L_00000218a90cc650 .concat [ 8 8 0 0], L_00000218a90dedc0, L_00000218a9450358;
+L_00000218a90cc6f0 .concat [ 8 8 0 0], L_00000218a90cd9b0, L_00000218a94503a0;
+L_00000218a90cc790 .arith/mult 16, L_00000218a90cc650, L_00000218a90cc6f0;
+L_00000218a90cc830 .arith/sum 16, L_00000218a90cbbb0, L_00000218a90cc790;
+L_00000218a90cbc50 .arith/sum 16, L_00000218a90cc830, L_00000218a94503e8;
+L_00000218a90dfcc0 .part L_00000218a90cbc50, 8, 8;
+L_00000218a90e0580 .concat [ 8 8 0 0], L_00000218a90dfcc0, L_00000218a9450430;
+L_00000218a90e0760 .arith/sum 16, L_00000218a90cbc50, L_00000218a90e0580;
+S_00000218a9072de0 .scope module, "core2" "neural_core" 3 24, 4 1 0, S_00000218a905d940;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "clk";
+    .port_info 1 /INPUT 1 "rst_n";
+    .port_info 2 /INPUT 8 "pixel_t";
+    .port_info 3 /INPUT 8 "pixel_t1";
+    .port_info 4 /INPUT 8 "mask";
+    .port_info 5 /OUTPUT 8 "pixel_out";
+L_00000218a9450478 .functor BUFT 1, C4<11111111>, C4<0>, C4<0>, C4<0>;
+v00000218a90cac80_0 .net/2u *"_ivl_0", 7 0, L_00000218a9450478;  1 drivers
+L_00000218a9450508 .functor BUFT 1, C4<00000000>, C4<0>, C4<0>, C4<0>;
+v00000218a90ca140_0 .net *"_ivl_11", 7 0, L_00000218a9450508;  1 drivers
+v00000218a90cb680_0 .net *"_ivl_14", 15 0, L_00000218a90df860;  1 drivers
+L_00000218a9450550 .functor BUFT 1, C4<00000000>, C4<0>, C4<0>, C4<0>;
+v00000218a90cad20_0 .net *"_ivl_17", 7 0, L_00000218a9450550;  1 drivers
+v00000218a90cb360_0 .net *"_ivl_18", 15 0, L_00000218a90df4a0;  1 drivers
+L_00000218a9450598 .functor BUFT 1, C4<00000000>, C4<0>, C4<0>, C4<0>;
+v00000218a90cb5e0_0 .net *"_ivl_21", 7 0, L_00000218a9450598;  1 drivers
+L_00000218a94505e0 .functor BUFT 1, C4<0000000010000000>, C4<0>, C4<0>, C4<0>;
+v00000218a90cb540_0 .net/2u *"_ivl_26", 15 0, L_00000218a94505e0;  1 drivers
+v00000218a90ca8c0_0 .net *"_ivl_30", 15 0, L_00000218a90e0300;  1 drivers
+v00000218a90cadc0_0 .net *"_ivl_32", 7 0, L_00000218a90e06c0;  1 drivers
+L_00000218a9450628 .functor BUFT 1, C4<00000000>, C4<0>, C4<0>, C4<0>;
+v00000218a90ca1e0_0 .net *"_ivl_34", 7 0, L_00000218a9450628;  1 drivers
+v00000218a90cb040_0 .net *"_ivl_4", 15 0, L_00000218a90e04e0;  1 drivers
+L_00000218a94504c0 .functor BUFT 1, C4<00000000>, C4<0>, C4<0>, C4<0>;
+v00000218a90cabe0_0 .net *"_ivl_7", 7 0, L_00000218a94504c0;  1 drivers
+v00000218a90c9f60_0 .net *"_ivl_8", 15 0, L_00000218a90df540;  1 drivers
+v00000218a90cb400_0 .net "clk", 0 0, v00000218a90cd050_0;  alias, 1 drivers
+v00000218a90ca780_0 .net "inv_mask", 7 0, L_00000218a90e08a0;  1 drivers
+v00000218a90cb720_0 .net "mask", 7 0, L_00000218a90dfe00;  1 drivers
+v00000218a90caf00_0 .var "pixel_out", 7 0;
+v00000218a90cb0e0_0 .net "pixel_t", 7 0, L_00000218a90dfd60;  1 drivers
+v00000218a90ca640_0 .net "pixel_t1", 7 0, L_00000218a90dfea0;  1 drivers
+v00000218a90ca0a0_0 .net "rst_n", 0 0, v00000218a90cd550_0;  alias, 1 drivers
+v00000218a90ca280_0 .net "sum", 15 0, L_00000218a90e0260;  1 drivers
+v00000218a90ca460_0 .net "sum_adjusted", 15 0, L_00000218a90e03a0;  1 drivers
+v00000218a90ca000_0 .net "sum_rounded", 15 0, L_00000218a90df5e0;  1 drivers
+v00000218a90cb7c0_0 .net "term_a", 15 0, L_00000218a90e01c0;  1 drivers
+v00000218a90cb9a0_0 .net "term_b", 15 0, L_00000218a90df720;  1 drivers
+L_00000218a90e08a0 .arith/sub 8, L_00000218a9450478, L_00000218a90dfe00;
+L_00000218a90e04e0 .concat [ 8 8 0 0], L_00000218a90dfd60, L_00000218a94504c0;
+L_00000218a90df540 .concat [ 8 8 0 0], L_00000218a90dfe00, L_00000218a9450508;
+L_00000218a90e01c0 .arith/mult 16, L_00000218a90e04e0, L_00000218a90df540;
+L_00000218a90df860 .concat [ 8 8 0 0], L_00000218a90dfea0, L_00000218a9450550;
+L_00000218a90df4a0 .concat [ 8 8 0 0], L_00000218a90e08a0, L_00000218a9450598;
+L_00000218a90df720 .arith/mult 16, L_00000218a90df860, L_00000218a90df4a0;
+L_00000218a90e0260 .arith/sum 16, L_00000218a90e01c0, L_00000218a90df720;
+L_00000218a90df5e0 .arith/sum 16, L_00000218a90e0260, L_00000218a94505e0;
+L_00000218a90e06c0 .part L_00000218a90df5e0, 8, 8;
+L_00000218a90e0300 .concat [ 8 8 0 0], L_00000218a90e06c0, L_00000218a9450628;
+L_00000218a90e03a0 .arith/sum 16, L_00000218a90df5e0, L_00000218a90e0300;
+S_00000218a9073080 .scope module, "core3" "neural_core" 3 30, 4 1 0, S_00000218a905d940;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "clk";
+    .port_info 1 /INPUT 1 "rst_n";
+    .port_info 2 /INPUT 8 "pixel_t";
+    .port_info 3 /INPUT 8 "pixel_t1";
+    .port_info 4 /INPUT 8 "mask";
+    .port_info 5 /OUTPUT 8 "pixel_out";
+L_00000218a9450670 .functor BUFT 1, C4<11111111>, C4<0>, C4<0>, C4<0>;
+v00000218a90ca500_0 .net/2u *"_ivl_0", 7 0, L_00000218a9450670;  1 drivers
+L_00000218a9450700 .functor BUFT 1, C4<00000000>, C4<0>, C4<0>, C4<0>;
+v00000218a90cb860_0 .net *"_ivl_11", 7 0, L_00000218a9450700;  1 drivers
+v00000218a90ca320_0 .net *"_ivl_14", 15 0, L_00000218a90e09e0;  1 drivers
+L_00000218a9450748 .functor BUFT 1, C4<00000000>, C4<0>, C4<0>, C4<0>;
+v00000218a90cb900_0 .net *"_ivl_17", 7 0, L_00000218a9450748;  1 drivers
+v00000218a90c9b00_0 .net *"_ivl_18", 15 0, L_00000218a90defa0;  1 drivers
+L_00000218a9450790 .functor BUFT 1, C4<00000000>, C4<0>, C4<0>, C4<0>;
+v00000218a90ca3c0_0 .net *"_ivl_21", 7 0, L_00000218a9450790;  1 drivers
+L_00000218a94507d8 .functor BUFT 1, C4<0000000010000000>, C4<0>, C4<0>, C4<0>;
+v00000218a90ca960_0 .net/2u *"_ivl_26", 15 0, L_00000218a94507d8;  1 drivers
+v00000218a90c9ba0_0 .net *"_ivl_30", 15 0, L_00000218a90debe0;  1 drivers
+v00000218a90c9d80_0 .net *"_ivl_32", 7 0, L_00000218a90df7c0;  1 drivers
+L_00000218a9450820 .functor BUFT 1, C4<00000000>, C4<0>, C4<0>, C4<0>;
+v00000218a90c9ec0_0 .net *"_ivl_34", 7 0, L_00000218a9450820;  1 drivers
+v00000218a90ca5a0_0 .net *"_ivl_4", 15 0, L_00000218a90e0440;  1 drivers
+L_00000218a94506b8 .functor BUFT 1, C4<00000000>, C4<0>, C4<0>, C4<0>;
+v00000218a90cc150_0 .net *"_ivl_7", 7 0, L_00000218a94506b8;  1 drivers
+v00000218a90cc010_0 .net *"_ivl_8", 15 0, L_00000218a90e0940;  1 drivers
+v00000218a90cd730_0 .net "clk", 0 0, v00000218a90cd050_0;  alias, 1 drivers
+v00000218a90cbcf0_0 .net "inv_mask", 7 0, L_00000218a90def00;  1 drivers
+v00000218a90cd230_0 .net "mask", 7 0, L_00000218a90df900;  1 drivers
+v00000218a90ccb50_0 .var "pixel_out", 7 0;
+v00000218a90ccab0_0 .net "pixel_t", 7 0, L_00000218a90ded20;  1 drivers
+v00000218a90ccf10_0 .net "pixel_t1", 7 0, L_00000218a90dee60;  1 drivers
+v00000218a90cbb10_0 .net "rst_n", 0 0, v00000218a90cd550_0;  alias, 1 drivers
+v00000218a90ccfb0_0 .net "sum", 15 0, L_00000218a90dff40;  1 drivers
+v00000218a90cbd90_0 .net "sum_adjusted", 15 0, L_00000218a90dec80;  1 drivers
+v00000218a90cd2d0_0 .net "sum_rounded", 15 0, L_00000218a90df180;  1 drivers
+v00000218a90ccbf0_0 .net "term_a", 15 0, L_00000218a90df680;  1 drivers
+v00000218a90ccc90_0 .net "term_b", 15 0, L_00000218a90deb40;  1 drivers
+L_00000218a90def00 .arith/sub 8, L_00000218a9450670, L_00000218a90df900;
+L_00000218a90e0440 .concat [ 8 8 0 0], L_00000218a90ded20, L_00000218a94506b8;
+L_00000218a90e0940 .concat [ 8 8 0 0], L_00000218a90df900, L_00000218a9450700;
+L_00000218a90df680 .arith/mult 16, L_00000218a90e0440, L_00000218a90e0940;
+L_00000218a90e09e0 .concat [ 8 8 0 0], L_00000218a90dee60, L_00000218a9450748;
+L_00000218a90defa0 .concat [ 8 8 0 0], L_00000218a90def00, L_00000218a9450790;
+L_00000218a90deb40 .arith/mult 16, L_00000218a90e09e0, L_00000218a90defa0;
+L_00000218a90dff40 .arith/sum 16, L_00000218a90df680, L_00000218a90deb40;
+L_00000218a90df180 .arith/sum 16, L_00000218a90dff40, L_00000218a94507d8;
+L_00000218a90df7c0 .part L_00000218a90df180, 8, 8;
+L_00000218a90debe0 .concat [ 8 8 0 0], L_00000218a90df7c0, L_00000218a9450820;
+L_00000218a90dec80 .arith/sum 16, L_00000218a90df180, L_00000218a90debe0;
+    .scope S_00000218a905dad0;
+T_0 ;
+    %wait E_00000218a9075860;
+    %load/vec4 v00000218a906d690_0;
+    %nor/r;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_0.0, 8;
+    %pushi/vec4 0, 0, 8;
+    %assign/vec4 v00000218a906e1d0_0, 0;
+    %jmp T_0.1;
+T_0.0 ;
+    %load/vec4 v00000218a906ca10_0;
+    %parti/s 8, 8, 5;
+    %assign/vec4 v00000218a906e1d0_0, 0;
+T_0.1 ;
+    %jmp T_0;
+    .thread T_0;
+    .scope S_00000218a9072c50;
+T_1 ;
+    %wait E_00000218a9075860;
+    %load/vec4 v00000218a90cb4a0_0;
+    %nor/r;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_1.0, 8;
+    %pushi/vec4 0, 0, 8;
+    %assign/vec4 v00000218a90ca6e0_0, 0;
+    %jmp T_1.1;
+T_1.0 ;
+    %load/vec4 v00000218a90c9ce0_0;
+    %parti/s 8, 8, 5;
+    %assign/vec4 v00000218a90ca6e0_0, 0;
+T_1.1 ;
+    %jmp T_1;
+    .thread T_1;
+    .scope S_00000218a9072de0;
+T_2 ;
+    %wait E_00000218a9075860;
+    %load/vec4 v00000218a90ca0a0_0;
+    %nor/r;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_2.0, 8;
+    %pushi/vec4 0, 0, 8;
+    %assign/vec4 v00000218a90caf00_0, 0;
+    %jmp T_2.1;
+T_2.0 ;
+    %load/vec4 v00000218a90ca460_0;
+    %parti/s 8, 8, 5;
+    %assign/vec4 v00000218a90caf00_0, 0;
+T_2.1 ;
+    %jmp T_2;
+    .thread T_2;
+    .scope S_00000218a9073080;
+T_3 ;
+    %wait E_00000218a9075860;
+    %load/vec4 v00000218a90cbb10_0;
+    %nor/r;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_3.0, 8;
+    %pushi/vec4 0, 0, 8;
+    %assign/vec4 v00000218a90ccb50_0, 0;
+    %jmp T_3.1;
+T_3.0 ;
+    %load/vec4 v00000218a90cbd90_0;
+    %parti/s 8, 8, 5;
+    %assign/vec4 v00000218a90ccb50_0, 0;
+T_3.1 ;
+    %jmp T_3;
+    .thread T_3;
+    .scope S_00000218a9072870;
+T_4 ;
+    %delay 10000, 0;
+    %load/vec4 v00000218a90cd050_0;
+    %inv;
+    %store/vec4 v00000218a90cd050_0, 0, 1;
+    %jmp T_4;
+    .thread T_4;
+    .scope S_00000218a9072870;
+T_5 ;
+    %vpi_call 2 16 "$dumpfile", "neural_simd.vcd" {0 0 0};
+    %vpi_call 2 17 "$dumpvars", 32'sb00000000000000000000000000000000, S_00000218a9072870 {0 0 0};
+    %vpi_call 2 18 "$display", "Time |     RS1    |     RS2    |    Mask    |     RD     | Note" {0 0 0};
+    %vpi_call 2 19 "$display", "----------------------------------------------------------------" {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000218a90cd050_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000218a90cd550_0, 0, 1;
+    %pushi/vec4 0, 0, 32;
+    %store/vec4 v00000218a90cca10_0, 0, 32;
+    %pushi/vec4 0, 0, 32;
+    %store/vec4 v00000218a90cd410_0, 0, 32;
+    %pushi/vec4 0, 0, 32;
+    %store/vec4 v00000218a90cc8d0_0, 0, 32;
+    %delay 20000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000218a90cd550_0, 0, 1;
+    %delay 20000, 0;
+    %pushi/vec4 1684300900, 0, 32;
+    %store/vec4 v00000218a90cca10_0, 0, 32;
+    %pushi/vec4 3368601800, 0, 32;
+    %store/vec4 v00000218a90cd410_0, 0, 32;
+    %pushi/vec4 2155872511, 0, 32;
+    %store/vec4 v00000218a90cc8d0_0, 0, 32;
+    %delay 50000, 0;
+    %vpi_call 2 32 "$finish" {0 0 0};
+    %end;
+    .thread T_5;
+    .scope S_00000218a9072870;
+T_6 ;
+    %wait E_00000218a9074da0;
+    %load/vec4 v00000218a90cd550_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_6.0, 8;
+    %delay 1000, 0;
+    %vpi_call 2 35 "$display", "%4t | %h | %h | %h | %h | Check 4 bytes!", $time, v00000218a90cca10_0, v00000218a90cd410_0, v00000218a90cc8d0_0, v00000218a90cc970_0 {0 0 0};
+T_6.0 ;
+    %jmp T_6;
+    .thread T_6;
+# The file index is used to find the file name in the following table.
+:file_names 5;
+    "N/A";
+    "<interactive>";
+    ".\Neural-Nexus\tb\tb_neural_simd.v";
+    ".\Neural-Nexus\rtl\neural_simd.v";
+    ".\Neural-Nexus\rtl\neural_core.v";
